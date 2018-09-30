@@ -67,7 +67,6 @@ int main()
 	}
 
 
-	//n baraye radif matris aval
 	vec = recarsive(A, B, r1 , r2 ,  c1 , c2);
 
 	cout<<" mul is"<< "=" <<endl;
@@ -269,9 +268,6 @@ vector<vector<int> > recarsive(vector<vector<int> > A,vector<vector<int> > B, in
 	   }
 	   cout<< endl;
    }
-   cout<< "bad az har bar daramandan az if va else rr1 hast "<< endl;
-   cout<< "rr1=" << rr1<< endl;
-
 
 	if(rr1==1 && rr2==1 && cc1==1 && cc2==1)
 	{
@@ -285,55 +281,21 @@ vector<vector<int> > recarsive(vector<vector<int> > A,vector<vector<int> > B, in
 		VEC.at(1).at(1) = A3.at(0).at(0) * B2.at(0).at(0) +  A4.at(0).at(0) * B4.at(0).at(0);
 
 
-		cout<<"A DAR IF IS " <<A.at(0).at(0)<<endl;
-		cout<<"B DAR IF IS " <<B.at(0).at(0)<<endl;
-		cout<<"VEC BIG IS"<<endl;
-		cout<< VEC[0][0]<<' '<<endl;
-		cout<< VEC[0][1]<<" "<<endl;
-		cout<<VEC[1][0]<<" "<< endl;
-		cout<< VEC[1][1]<< " "<< endl;
 	}
 
 	else
 	{
-		//tamam in vector ha taze yek vector do dar do ra b ma midahand
-      cout<<" to elsam "<<endl;
-
+      
       vec1= sumarray( recarsive(A1 ,B1 ,rr1 ,rr2 ,cc1 ,cc2) , recarsive(A2 ,B3 ,rr1 ,rr2 ,cc1 ,cc2),rr1 ,rr2 ,cc1 ,cc2);
-
-
-      cout<< "vec 1 is "<< vec1[0][0]<<endl;
-      cout<< vec1[0][1]<<endl;
-      cout<< vec1[1][0]<<endl;
-      cout<< vec1[1][1]<<endl;
-
 
 
 
       vec2= sumarray(recarsive(A1 ,B2 ,rr1 ,rr2 ,cc1,cc2)  ,  recarsive(A2 ,B4 ,rr1 ,rr2 ,cc1 ,cc2), rr1,rr2,cc1,cc2);
 
-
-      cout<<"vec2 is"<<vec2.at(0).at(0)<<endl;
-      cout<< vec2[0][1]<<endl;
-      cout<< vec2[1][0]<<endl;
-      cout<< vec2[1][1]<<endl;
-
-
-
       vec3= sumarray( recarsive(A3 ,B1 ,rr1 ,rr2 ,cc1 ,cc2) , recarsive(A4 ,B3 ,rr1 ,rr2 ,cc1 ,cc2),rr1 ,rr2 ,cc1 ,cc2);
 
-      cout<<"vec3 is"<<vec3.at(0).at(0)<<endl;
-      cout<< vec3[0][1]<<endl;
-      cout<< vec3[1][0]<<endl;
-      cout<< vec3[1][1]<<endl;
-
       vec4= sumarray(recarsive(A3 ,B2 ,rr1 ,rr2 ,cc1 ,cc2) ,  recarsive(A4 ,B4 ,rr1 ,rr2 ,cc1 ,cc2), rr1 ,rr2 ,cc1 ,cc2);
-      cout<<"vec4 is"<<vec4.at(0).at(0)<<endl;
-      cout<< vec4[0][1]<<endl;
-      cout<< vec4[1][0]<<endl;
-      cout<< vec4[1][1]<<endl;
-
-      cout<< " r1 in recarsive is " << r1 << endl;
+     
       VEC = merge(vec1 , vec2 , vec3 , vec4 , r1 ,  c1 , rr1 , cc1  );
 
 	}
@@ -353,7 +315,6 @@ vector<vector<int> > sumarray(vector<vector<int> > array1 , vector<vector<int> >
 			add.at(i).at(j) = array1.at(i).at(j) + array2.at(i).at(j);
 		}
 	}
-	cout<<"add in matris "<< add.at(0).at(0) << endl;
 	return add;
 
 }
@@ -361,14 +322,6 @@ vector<vector<int> > sumarray(vector<vector<int> > array1 , vector<vector<int> >
 
 vector< vector<int> > merge( vector<vector<int> > vec1 , vector<vector<int> > vec2, vector<vector<int> > vec3 , vector<vector<int> >vec4 , int r1 , int c1 , int rr1 ,int cc1)
 {
-	cout<< " slm in merge is "<< endl;
-
-
-    cout<< " r1 in merge is "<< endl;
-    cout<< r1<<endl;
-
-    cout<<" rr1 in merge is "<< endl;
-    cout<< rr1 <<endl;
 	vector<vector<int> > VEC (r1,vector <int> (c1, 0));
 
 	for(int i=0 ; i < rr1 ; i++ )
